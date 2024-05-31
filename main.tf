@@ -1,5 +1,5 @@
 resource "aws_instance" "first-ec2" {
-  ami           = "ami-005e54dee72cc1d00"
+  ami           = "ami-00fa32593b478ad6e"
   instance_type = "t2.micro"
   tags = {
     Name = "testing"
