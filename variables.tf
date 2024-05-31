@@ -31,6 +31,6 @@ variable "instance_type" {
 
 variable "name_tag" {
    type        = string
-   description = "Name of the EC2 instance"
+   description = "Testing from terraform"
    default     = "My EC2 Instance"
 }
