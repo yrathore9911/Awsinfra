@@ -92,7 +92,7 @@ resource "aws_key_pair" "newkey" {
   public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCW7eNB1eOHkMWvsr/iThbcdL3WgO9TdJuyyiJBt0mGj0lFnQx+zsVxF4IIbX9Xnj3OgwDbNJy2JD2NvH1rYqOXsuQPoj3KeZdkjny2suAj3VEwDtzcQlFTkJ21df/J9MZ8fErgUH3tHLb2tPtIA2tnF7mY7iomQfsBj2wFpwE1dLRqBzd5MNXdKQFZaUXv4HbdNJef1PvWDZej/nsZPClAnu8Dr2Nnw//T94UrDspPb1ErY14pj0yxzBIo4g00IeP9mZT4mIfOFQqD43HuSM297L6sDcO9JRgqpVts9GxWTGVmxTvpeFZ3ttejtcNa7i0jLT++JF+ygAZpIxveYANRepSfPhminqKYvXP67sz6yhGnhMZucKXj2Hd0lexcIPmE+hhfb0xam0yRwwMRxLtKPXbI8jdP3oh/ymwRJFU8Abv141fD6JGjKAmKpRkjItEDLuAA8MrPUlhvoN3wWZi5LQ1kaMkMhG2A78PyrS3ztkJNCOZ4TKdX2nN4s6Z2Jp8= yash@Linuxuser-01"
   }
 
-resource "aws_eip" "pubeip" {
+resource "aws_eip" "pubip" {
   instance = aws_instance.public_instance.id
   vpc      = true
 }
