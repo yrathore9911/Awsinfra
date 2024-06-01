@@ -11,7 +11,6 @@ resource "aws_vpc" "main" {
 # Creating subnets
 
 resource "aws_subnet" "public" {
-  count             = 1
   vpc_id            = aws_vpc.main.id
   cidr_block        = "20.0.1.0/24"
   map_public_ip_on_launch = true
@@ -22,7 +21,6 @@ resource "aws_subnet" "public" {
 }
 
 resource "aws_subnet" "private" {
-  count             = 1
   vpc_id     = aws_vpc.main.id
   cidr_block = "20.0.2.0/24"
 
@@ -90,7 +88,6 @@ resource "aws_security_group" "allow_ssh" {
 # Creating Public and private instance
 
 resource "aws_instance" "public_instance" {
-  count             = 1
   ami           = "ami-00fa32593b478ad6e"  # Update with a valid AMI ID for your region
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.public.id
@@ -104,7 +101,6 @@ resource "aws_instance" "public_instance" {
 }
 
 resource "aws_instance" "private_instance" {
-  count             = 1
   ami           = "ami-00fa32593b478ad6e"  # Update with a valid AMI ID for your region
   instance_type = "t2.micro"
   key_name      = "Jenkins_key"
