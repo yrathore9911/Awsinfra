@@ -52,3 +52,13 @@ resource "aws_security_group" "allow_ssh" {
     Name = "allow_ssh"
   }
 }
+
+# Creating Internet gateway
+
+resource "aws_internet_gateway" "gw" {
+  vpc_id = aws_vpc.main.id
+
+  tags = {
+    Name = "main-gateway"
+  }
+}
