@@ -99,7 +99,7 @@ resource "aws_instance" "public_instance" {
   ami           = "ami-00fa32593b478ad6e"  # Update with a valid AMI ID for your region
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.public.id
-  security_groups = [aws_security_group.allow_ssh.name]
+  security_groups = [aws_security_group.allow_ssh.id]
   key_name      = "newkey"
 
   tags = {
