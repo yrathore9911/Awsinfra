@@ -120,3 +120,10 @@ resource "aws_instance" "private_instance" {
     Name = "private-instance"
    }
 }
+
+# creating public ip
+
+resource "aws_eip" "public_instance_ip" {
+  instance = aws_instance.public_instance.id
+  domain   = "vpc"
+}
