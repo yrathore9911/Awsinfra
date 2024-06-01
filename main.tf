@@ -118,4 +118,5 @@ resource "aws_instance" "private_instance" {
 
   tags = {
     Name = "private-instance"
+   }
 }
