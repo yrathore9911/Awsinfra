@@ -96,7 +96,7 @@ resource "aws_key_pair" "newkey" {
 # Creating Public instance
 
 resource "aws_instance" "public_instance" {
-  ami           = "ami-00fa32593b478ad6e"  # Update with a valid AMI ID for your region
+  ami           = "ami-00beae93a2d981137"  # Update with a valid AMI ID for your region
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.public.id
   security_groups = [aws_security_group.allow_ssh.id]
@@ -110,7 +110,7 @@ resource "aws_instance" "public_instance" {
 # Creating Private instance
 
 resource "aws_instance" "private_instance" {
-  ami           = "ami-00fa32593b478ad6e"  # Update with a valid AMI ID for your region
+  ami           = "ami-00beae93a2d981137"  # Update with a valid AMI ID for your region
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.private.id
   security_groups = [aws_security_group.allow_ssh.id]
