@@ -127,3 +127,16 @@ resource "aws_eip" "public_instance_ip" {
   instance = aws_instance.public_instance.id
   domain   = "vpc"
 }
+
+# creating another public ip for nat gateway
+
+resource "aws_eip" "natgwip" {
+  domain   = "vpc"
+}
+
+# creating nat gateway for private subnet machine
+
+resource "aws_nat_gateway" "natgw" {
+  allocation_id = aws_eip.natgwip.id
+  subnet_id     = aws_subnet.public.id
+}
